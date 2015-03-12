@@ -1,0 +1,72 @@
+<head>
+<meta charset="UTF-8">
+
+
+<style>
+	body {
+		background-image: url("http://www.murphyzville.com/images/moon-1600x1200.jpg");
+	    background-color: black;
+	    background-repeat: no-repeat;
+	}
+	.line, #input_wrap {
+	    color: rgb(141, 142, 137);
+	}
+	#line0{
+		margin-bottom: 10px;
+		font-size: 25pt;
+		color: black;
+	}
+	#riddle{
+		width:300px;
+	    height:200px;
+	    position:absolute;
+	    left:50%;
+	    top:50%;
+	    margin:-100px 0 0 -150px;
+	    font-size: 20pt;
+	} 
+	#input_wrap{
+		margin-top: 30px;
+	}
+</style>
+</head>
+<html>
+ <div id='riddle'> 
+ 	<div id='line0' class='line'>
+ 		<span id='w0'> Загадка:</span>
+ 	</div>
+ 	<div id='line1' class='line'>
+    <span id='w1'>Ищи</span> <span id='w2'>лун</span> <span id='w3'>руку,</span>
+   </div>
+   <div id='line2' class='line'>
+  	<span id='w4'> Швы </span> <span id='w5'>ща</span> <span id='w6'>муки!</span>
+  	</div>
+  	<div id='input_wrap'>Ключ Боба?<br><input type='text' id='input'></input></div>
+ </div>
+  
+</html>
+<script>
+String.prototype.hashCode = function() {
+  var hash = 0, i, chr, len;
+  if (this.length == 0) return hash;
+  for (i = 0, len = this.length; i < len; i++) {
+    chr   = this.charCodeAt(i);
+    hash  = ((hash << 5) - hash) + chr;
+    hash |= 0; // Convert to 32bit integer
+  }
+  return hash;
+};
+
+document.getElementById('input').onkeypress = function(e){
+    if (!e) e = window.event;
+    var keyCode = e.keyCode || e.which;
+    if (keyCode == '13'){
+      if(this.value.hashCode()%1001==735){
+      	alert('Поздравляю! Это правильный ответ');
+      }else{
+      	alert('Нет =(');
+      }
+      return false;
+    }
+  }
+</script>
