@@ -28,6 +28,23 @@
 	#input_wrap{
 		margin-top: 30px;
 	}
+	#q1{
+		position: relative;
+		top: -10px;
+		right: 10px;
+		font-size: 30px;
+	}
+	#q2{
+		position: relative;
+		bottom: -10px;
+		right: -10px;
+		font-size: 30px;
+	}
+	#line3{
+		text-align: right;
+		font-size: 15pt;
+		padding-right: 50px;
+	}
 </style>
 </head>
 <html>
@@ -36,12 +53,15 @@
  		<span id='w0'> Загадка:</span>
  	</div>
  	<div id='line1' class='line'>
-    <span id='w1'>Ищи</span> <span id='w2'>лун</span> <span id='w3'>руку,</span>
+    <span id='q1'>“</span><span id='w1'>Ищи</span> <span id='w2'>лун</span> <span id='w3'>руку,</span>
    </div>
    <div id='line2' class='line'>
-  	<span id='w4'> Швы </span> <span id='w5'>ща</span> <span id='w6'>муки!</span>
+  	<span id='w4'> Швы </span> <span id='w5'>ща</span> <span id='w6'>муки!</span> <span id='q2'>”</span>
   	</div>
-  	<div id='input_wrap'>Ключ Боба?<br><input type='text' id='input'></input></div>
+  	<div  id='line3' class="line">
+  		(c) Bob, 2014
+  	</div>
+  	<div id='input_wrap'>Введите ключ:<br><input type='text' id='input'></input></div>
  </div>
   
 </html>
